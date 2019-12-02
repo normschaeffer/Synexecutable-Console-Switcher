@@ -24,9 +24,12 @@ Demonstration of **Enkadia Synexecutables** - command line / console application
 ### Configuring your components
 Synexsis builds your components by reading values from an `appsettings.json` file, located at the root of your program's runtime directory. Place your Synexsis Test License in the same folder.
 
+#### Pro Tip
+Create your appsettings.json file and save it along with your license file in the root folder before you build your application. This keeps your app from crashing the first time you run it.
+
 ```text
 Place the appsettings.json file and license key in this folder.
-This is an example for a release version running the Windows desktop:
+This is an example for a release version running on Windows desktop:
 
    console-switcher\bin\Release\netcoreapp3.0\
 
