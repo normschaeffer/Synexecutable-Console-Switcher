@@ -29,7 +29,7 @@ Create your appsettings.json file and save it along with your license file in th
 
 ```text
 Place the appsettings.json file and license key in this folder.
-This is an example for a release version running on Windows desktop:
+(This example file path is for a release version running on Windows desktop)
 
    console-switcher\bin\Release\netcoreapp3.0\
 
