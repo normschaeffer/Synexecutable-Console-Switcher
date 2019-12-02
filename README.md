@@ -1,7 +1,9 @@
 ![](https://github.com/normschaeffer/console-switcher/blob/master/Images/ENKADIA-Synexsis-2x1.png)
 
 ## Enkadia Synexecutable Console Switcher
-Demonstration of **Enkadia Synexecutables** - command line / console applications for a/v control
+Demonstration of **Enkadia Synexecutables**
+
+*Synexecutables provide a/v control from console or command line applications. Synexecutables can be added to the task scheduler, run in the background or sit on the taskbar.*
 
 ### Devices and software used for this project
   * Windows 10 desktop computer
