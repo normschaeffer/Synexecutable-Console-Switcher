@@ -28,7 +28,8 @@ namespace console_switcher
             Console.WriteLine("     (2) - Send TV to Monitors in Break Room and Lobby" + SingleSpace);
             Console.WriteLine("     (3) - Mute Video Displays" + SingleSpace);
             Console.WriteLine("     (4) - Unmute Video Displays" + SingleSpace);
-            Console.WriteLine("     (5) - Shutdown App" + SingleSpace);
+            Console.WriteLine("     (5) - Check Crosspoints" + SingleSpace);
+            Console.WriteLine("     (6) - Shutdown App" + SingleSpace);
             Console.WriteLine("     Press Esc twice to end the program");
             Console.WriteLine();
 
@@ -40,19 +41,19 @@ namespace console_switcher
                 switch (intSelected) // D1-D5 indicate number keys on the keyboard;
                 {
                     case (short)ConsoleKey.D1:
-                        Input = 3;
+                        Input = 1;
                         SendToSwitcher(Input);
                         break;
                     case (short)ConsoleKey.NumPad1:
-                        Input = 3;
+                        Input = 1;
                         SendToSwitcher(Input);
                         break;
                     case (short)ConsoleKey.D2:
-                        Input = 5;
+                        Input = 4;
                         SendToSwitcher(Input);
                         break;
                     case (short)ConsoleKey.NumPad2:
-                        Input = 5;
+                        Input = 4;
                         SendToSwitcher(Input);
                         break;
                     case (short)ConsoleKey.D3:
@@ -68,9 +69,15 @@ namespace console_switcher
                         UnmuteDisplays();
                         break;
                     case (short)ConsoleKey.D5:
-                        SystemShutdown();
+                        CheckCrosspoints();
                         break;
                     case (short)ConsoleKey.NumPad5:
+                        CheckCrosspoints();
+                        break;
+                    case (short)ConsoleKey.D6:
+                        SystemShutdown();
+                        break;
+                    case (short)ConsoleKey.NumPad6:
                         SystemShutdown();
                         break;
 
@@ -103,9 +110,18 @@ namespace console_switcher
             await swt.AVMuteAll();
         }
 
+        private static async void CheckCrosspoints()
+        {
+            string answer;
+            var response = await swt.GetRGBXPoints();
+            answer = response.RawResponse;
+        }
+
         private static async void UnmuteDisplays()
         {
-            await swt.AVUnmuteAll();
+            string answer;
+            var response = await swt.AVUnmuteAll();
+            answer = response.RawResponse;
         }
 
         private static void SystemShutdown()
