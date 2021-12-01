@@ -10,7 +10,7 @@ Demonstration of **Enkadia Synexecutables**
   * Extron 8x8 DXP matrix switcher
   * Netgear 5 port 10/100 switch
 
-### Synexsis NuGet packages used - Available at the NuGet Repository (search Enkadia and check prerelease)
+### Synexsis NuGet packages used - Available at the NuGet Repository (search for Enkadia)
   * Enkadia.Synexsis.Components.Switchers
   * Enkadia.Synexsis.ComponentFramework
   
@@ -19,18 +19,14 @@ Demonstration of **Enkadia Synexecutables**
   
 ### Windows Target environments
    * Minimum Windows 10, version 1803
-   * Maximum Windows 10, version 1809
+   * Maximum Windows 10, version 1903
    
-#### NOTE THIS TEST PLATFORM REQUIRES THE USE OF AN ENKADIA TEST LICENSE. TO REQUEST A LICENSE PLEASE SEE [enkadia.com](https://www.enkadia.com)
 
 ### Configuring your components
-Synexsis builds your components by reading values from an `appsettings.json` file, located at the root of your program's runtime directory. Place your Synexsis Test License in the same folder.
-
-#### Pro Tip
-Create your appsettings.json file and save it along with your license file in the root folder before you build your application. This keeps your app from crashing the first time you run it.
+Synexsis builds your components by reading values from an `appsettings.json` file, located at the root of your program's runtime directory.
 
 ```text
-Place the appsettings.json file and license key in this folder.
+Place the appsettings.json file in this folder.
 (This example file path is for a release version running on Windows desktop)
 
    console-switcher\bin\Release\netcoreapp3.0\
@@ -50,10 +46,6 @@ If the application fails to start, verify the license and appsettings.json files
     "IPAddress": "192.168.1.50",
     "Username":"admin",
     "Password":"password"
-},
-  "License": {
-    "OfflineActivation": "true",
-    "LicenseFileName": "ActivationFile110314.skm"
   }
 }
 ```
